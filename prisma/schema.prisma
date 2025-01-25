@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Shoe {
+  id       Int      @id @default(autoincrement())
+  name     String   @db.VarChar(50)
+  type     String?  @db.VarChar(50)
+  foot     String?  @db.VarChar(10)
+  size     Decimal? @db.Decimal(3, 1)
+  width    String?  @db.VarChar(20)
+  color    String?  @db.VarChar(50)
+  brand    String?  @db.VarChar(50)
+  material String?  @db.VarChar(50)
+  closure  String?  @db.VarChar(50)
+  image    String?  @db.Text
+}
