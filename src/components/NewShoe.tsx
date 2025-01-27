@@ -1,27 +1,9 @@
 'use client'
 
-// import { useState } from "react";
 import "./NewShoe.scss";
 import { addShoe } from "@/utils/actions";
 
-// interface Shoe {
-//     type: string;
-//     foot: string;
-//     brand: string;
-//     image: string;
-//     size: number;
-//     name: string;
-// }
-
 export default function NewShoe() {
-    // const [shoe, setShoe] = useState<Shoe>({
-    //     type: "",
-    //     foot: "",
-    //     brand: "",
-    //     image: "",
-    //     size: 0,
-    //     name: "",
-    // });
 
     const sizes = [];
 
@@ -30,7 +12,6 @@ export default function NewShoe() {
         const j = i + .5;
         sizes.push(<option key={j} value={j}>{j}</option>);
     }
-
 
     return (
         <div className="new-shoe">

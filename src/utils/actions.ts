@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import prisma from "./db";
 
 export async function addShoe(formData: FormData) {
-    const newShoe = await prisma.shoe.create({
+    await prisma.shoe.create({
         data: {
             type: formData.get("type") as string,
             foot: formData.get("foot") as string,
